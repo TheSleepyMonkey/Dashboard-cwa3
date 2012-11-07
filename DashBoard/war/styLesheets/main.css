@@ -1,0 +1,27 @@
+body
+{
+    background-color: #f0f7fb; /*#f9f9f9;*/
+    padding: 0;
+}
+
+#main
+{
+    width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	border-top: 3px solid #aed0ea;
+}
+#main #menu
+{
+	margin-right: 0;
+	border-bottom: 3px solid #aed0ea;
+	border-right: 3px solid #aed0ea;
+	border-left: 3px solid #aed0ea;
+	text-align: right;
+}
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
