@@ -5,24 +5,24 @@ import java.util.List;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
 
-public class CourseRegistery {
+public class CourseRegistry {
 	
-	private static CourseRegistery instance = null;
+	private static CourseRegistry instance = null;
 	private List<Course> courses;
 	private Objectify ofy = ObjectifyService.begin();
 	
-	public CourseRegistery()
+	public CourseRegistry()
 	{
 	ObjectifyService.register(Course.class);
 	Iterable<Course> keys =	ofy.query(Course.class);
 		
 	}
 	
-	public static CourseRegistery getInstance()
+	public static CourseRegistry getInstance()
 	{
 		if(instance == null)
 		{
-			instance = new CourseRegistery();
+			instance = new CourseRegistry();
 		}
 		return instance;
 	}
@@ -42,9 +42,8 @@ public class CourseRegistery {
 		return courses;
 	}
 	
-	public Course getCourse() // Nog doen
-	{
-		
-		return null;
+	public Course getCourse(long id) // Nog doen
+	{	
+		return ofy.query(Course.class).filter("id", id).get();	
 	}
 }
