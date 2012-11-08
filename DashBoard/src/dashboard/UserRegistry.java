@@ -1,5 +1,6 @@
 package dashboard;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.googlecode.objectify.*;
 public class UserRegistry {
@@ -9,7 +10,8 @@ public class UserRegistry {
 	
 	public UserRegistry()
 	{
-		ObjectifyService.register(User.class);
+	ObjectifyService.register(User.class);
+	Iterable<User> keys =	ofy.query(User.class);
 	}
 	
 	public static UserRegistry getInstance()
@@ -25,13 +27,15 @@ public class UserRegistry {
 	{
 		ofy.put(user);
 	}
-	
-	
+		
 	public User getUser(String userName)
 
 	{
 		return ofy.query(User.class).filter("username", userName).get();
-
+	}
+	
+	public ArrayList<User> getAllUsers(){
+	return null;
 	}
 	
 	
