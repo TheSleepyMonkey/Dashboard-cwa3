@@ -26,20 +26,14 @@ public class UserRegistry {
 		//toevoegen van user aan de database
 	}
 	
-	public void removeUser()
-	{
-		//verwijderen van user van de database
-	}
 	
+	public void getInstance(){
+		
+	}
 	public User getUser(String username)
 	{
 		return null;
 	}
 	
-	public boolean isAuthenticated(User user)
-	{
-		if(getUser(user.getUsername()).getPassword().equals(user.getPassword()))
-			return true;
-		return false;
-	}
+	
 }
