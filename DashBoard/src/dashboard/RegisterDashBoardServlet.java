@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RegisterDashBoardServlet extends HttpServlet  {
 
+	private RegisterController RC = new RegisterController();
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
@@ -17,9 +18,9 @@ public class RegisterDashBoardServlet extends HttpServlet  {
 		String[] allCourses = req.getParameterValues("courses");
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
-		String cpassword = req.getParameter("cpassword");
 		String email = req.getParameter("email");
 		
+		RC.setInfo(username, password, email);
 		if (allCourses != null) 
 		   {
 		      for (int i = 0; i < allCourses.length; i++) 
@@ -28,7 +29,7 @@ public class RegisterDashBoardServlet extends HttpServlet  {
 		      }
 		   }
 		
-		if(username.length() != 0 && password.length() > 5 && cpassword.equals(password) && email.length() != 0)
+		if(true)
 		{
 			
 			resp.sendRedirect("dashboard.jsp?R=true");

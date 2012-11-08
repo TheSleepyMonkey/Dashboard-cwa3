@@ -13,7 +13,7 @@ public class CourseRegistery {
 		
 	}
 	
-	public CourseRegistery getInstance()
+	public static CourseRegistery getInstance()
 	{
 		if(instance == null)
 		{
@@ -35,5 +35,11 @@ public class CourseRegistery {
 	public List<Course> getCourses()
 	{
 		return courses;
+	}
+	
+	public Course getCourse()
+	{
+		
+		return null;
 	}
 }

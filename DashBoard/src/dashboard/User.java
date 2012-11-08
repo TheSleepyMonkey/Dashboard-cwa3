@@ -184,4 +184,10 @@ public class User {
 		return false;
 	}
 
+	public void setUsername(String username) {
+		
+		this.username = username;
+		
+	}
+
 }

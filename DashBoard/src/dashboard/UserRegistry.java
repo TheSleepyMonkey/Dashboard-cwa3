@@ -26,9 +26,7 @@ public class UserRegistry {
 	}
 	
 	
-	public void getInstance(){
-		
-	}
+
 	public User getUser(String username)
 	{
 		return null;
