@@ -6,8 +6,18 @@
 </head>
 
 <body>
+<!-- Controleren of timer werkt. -->
+<form name="startTimer" action="/startTimer" method="post">
+<select name="vak">
+<!-- Vak selecteren uit opgenomen vakken -->
 
-<input type="button" name="Start" >
+</select>
+<input type="submit" value="start timer" name="start">
+</form>
+
+
+
+
 
 </body>
 
