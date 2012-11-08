@@ -9,7 +9,6 @@ public class Course {
 	private String fase;
 	
 	@Id Long id;
-	
 	public Course(String coursename)
 	{
 		this.coursename = coursename;
