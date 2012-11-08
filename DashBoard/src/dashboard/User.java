@@ -12,7 +12,7 @@ public class User {
 
 	@Id Long id;
 
-	private String username;
+	private String userName;
 	private String password;
 	private String email;
 
@@ -25,7 +25,7 @@ public class User {
 
 	public User(String username, String password, String email, List<Course> courses, String role)
 	{
-		this.username = username;
+		this.userName = username;
 		this.password = password;
 		this.email = email;
 		this.courses = courses;
@@ -64,7 +64,7 @@ public class User {
 
 	public String getUsername()
 	{
-		return username;
+		return userName;
 	}
 
 	public String getPassword()
