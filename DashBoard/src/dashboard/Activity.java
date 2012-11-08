@@ -19,14 +19,21 @@ public class Activity {
 		
 		private int appreciation;
 		
-		public Activity(Date start, Date stop, int nrOfPages, int courseId, int appreciation)
+		private String place;
+		
+		private String type;
+		
+		public Activity(Date start, Date stop, int nrOfPages, int courseId, int appreciation, String place, String type)
 		{
 			this.start = start;
 			this.stop = stop;
 			this.nrOfPages = nrOfPages;
 			this.courseId = courseId;
 			this.appreciation = appreciation;
+			this.place = place;
+			this.type = type;
 		}
+		
 		
 		
 		//getters and setter
@@ -74,5 +81,21 @@ public class Activity {
 
 		public int getCourseId() {
 			return courseId;
+		}
+		
+		public void setPlace(String place) {
+			this.place = place;
+		}
+		
+		public String getPlace() {
+			return place;
+		}
+		
+		public void setType(String type) {
+			this.type = type;
+		}
+		
+		public String getType() {
+			return type;
 		}
 }
