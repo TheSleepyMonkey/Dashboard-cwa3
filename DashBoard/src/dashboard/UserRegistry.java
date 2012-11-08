@@ -5,10 +5,11 @@ import com.googlecode.objectify.*;
 public class UserRegistry {
 	
 	private static UserRegistry instance = null;
+	private Objectify ofy = ObjectifyService.begin();
 	
 	public UserRegistry()
 	{
-
+		ObjectifyService.register(User.class);
 	}
 	
 	public static UserRegistry getInstance()
@@ -20,16 +21,17 @@ public class UserRegistry {
 		return instance;
 	}
 	
-	public void addUser(User u)
+	public void addUser(User user)
 	{
-		//toevoegen van user aan de database
+		ofy.put(user);
 	}
 	
 	
+	public User getUser(String userName)
 
-	public User getUser(String username)
 	{
-		return null;
+		return ofy.query(User.class).filter("username", userName).get();
+
 	}
 	
 	

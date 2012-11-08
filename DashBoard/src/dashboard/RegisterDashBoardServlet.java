@@ -21,11 +21,12 @@ public class RegisterDashBoardServlet extends HttpServlet  {
 		String email = req.getParameter("email");
 		
 		RC.setInfo(username, password, email);
+		
 		if (allCourses != null) 
 		   {
 		      for (int i = 0; i < allCourses.length; i++) 
 		      {
-		         courses.add(new Course(allCourses[i]));
+		       //  RC.addCourse(CourseRegistery.getInstance().getCourse());
 		      }
 		   }
 		
