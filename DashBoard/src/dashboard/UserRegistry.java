@@ -8,8 +8,7 @@ public class UserRegistry {
 	
 	public UserRegistry()
 	{
-		//ObjectifyService.register(User.class);
-		int test = 0;
+
 	}
 	
 	public static UserRegistry getInstance()
