@@ -18,6 +18,7 @@ public class User {
 
 	private List<Course> courses;
 	private List<Activity> activities;
+	private List<String> favourites;
 	private List<Milestone> milestones;
 
 	private Role role = Role.STUDENT;
@@ -33,6 +34,7 @@ public class User {
 
 		activities = new ArrayList<Activity>();
 		milestones = new ArrayList<Milestone>();
+		favourites =  new ArrayList<String>();
 	}
 
 	// Getters and setters
@@ -42,6 +44,17 @@ public class User {
 		this.password = password;
 		return true;
 	}
+
+	public List<String> getFavourites() {
+		return favourites;
+	}
+
+
+
+	public List<Milestone> getMilestones() {
+		return milestones;
+	}
+
 
 	public boolean setEmail(String email)
 	{
@@ -59,9 +72,9 @@ public class User {
 		return password;
 	}
 
-	public String getRole()
+	public Role getRole()
 	{
-		return null;
+		return role;
 	}
 
 	public String getEmail()
@@ -127,6 +140,30 @@ public class User {
 		return false;
 	}
 	
+	public void addFavourite(String userNumber) {
+		favourites.add(userNumber);
+	}
+	
+	/**
+	 * Verwijdert bepaalde user uit favorieten
+	 * @param user : te verwijderen gebruiker uit favorieten
+	 * @return true als gelukt, false als mislukt
+	 */
+	public boolean removeFavourite(int activityId)
+	{
+		if(favourites.size() == 0) return false;
+		for(String userNumber: favourites)
+		{
+			if(favourites.contains(userNumber))
+			{
+				favourites.remove(userNumber);
+				return true;
+			}
+
+		}
+		return false;
+	}
+
 	public void addMilestone(Milestone milestone)
 	{
 		milestones.add(milestone);
