@@ -32,7 +32,7 @@
 					}
 				%>
 				<br /> Username: <br /> <input style='width: 230px;' type="text"
-					name="username" /><br /> Password: <br /> <input
+					name="username" value="<%=session.getAttribute("Lusername")%>" /><br /> Password: <br /> <input
 					style='width: 230px;' type="password" name="password" /> <br /> <br />
 				<input type="checkbox" name="remember"> Remember me. <br />
 				<br />

@@ -8,11 +8,11 @@ public class UserRegistery {
 	
 	public UserRegistery()
 	{
-		ObjectifyService.register(com.google.appengine.api.users.User.class);
+		//ObjectifyService.register(User.class);
 		int test = 0;
 	}
 	
-	public UserRegistery getInstance()
+	public static UserRegistery getInstance()
 	{
 		if(instance == null)
 		{
@@ -34,5 +34,12 @@ public class UserRegistery {
 	public User getUser(String username)
 	{
 		return null;
+	}
+	
+	public boolean isAuthenticated(User user)
+	{
+		if(getUser(user.getUsername()).getPassword().equals(user.getPassword()))
+			return true;
+		return false;
 	}
 }
