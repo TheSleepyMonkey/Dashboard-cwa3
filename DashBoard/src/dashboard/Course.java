@@ -1,11 +1,14 @@
 package dashboard;
 
+import javax.persistence.Id;
+
 public class Course {
 	
 	private String coursename;
 	private int semester;
 	private String fase;
-	private int Id;
+	
+	@Id Long id;
 	
 	public Course(String coursename)
 	{
@@ -16,8 +19,8 @@ public class Course {
 	{
 		return coursename;
 	}
-	public String getIdToString()
+	public long getId()
 	{
-		return "" + Id;
+		return id;
 	}
 }
