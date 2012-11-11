@@ -49,4 +49,13 @@
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>Timer</servlet-name>
+        <servlet-class>dashboard.TimerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Timer</servlet-name>
+        <url-pattern>/Timer</url-pattern>
+    </servlet-mapping>
 </web-app>
