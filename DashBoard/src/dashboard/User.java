@@ -15,6 +15,7 @@ public class User {
 	private String userName;
 	private String password;
 	private String email;
+	private boolean timing;
 
 	private List<Course> courses;
 	private List<Activity> activities;
@@ -32,9 +33,10 @@ public class User {
 		if(role.equals("Tutor"))
 			this.role = Role.TUTOR;
 
-		activities = new ArrayList<Activity>();
-		milestones = new ArrayList<Milestone>();
-		favourites =  new ArrayList<String>();
+		this.activities = new ArrayList<Activity>();
+		this.milestones = new ArrayList<Milestone>();
+		this.favourites =  new ArrayList<String>();
+		this.timing = false;
 	}
 
 	// Getters and setters
@@ -91,14 +93,14 @@ public class User {
 	{
 		return activities;
 	}
-	
+
 	public long getId()
 	{
 		return id;
 	}
 
 	//adders and remover
-	
+
 	public boolean addCourse(Course course)
 	{
 		courses.add(course);
@@ -113,6 +115,7 @@ public class User {
 			if(course.getCoursename().equals(courseName))
 			{
 				courses.remove(course);
+
 				return true;
 			}
 		}
@@ -120,11 +123,22 @@ public class User {
 	}
 
 
-	public void addActivity(Activity activity)
+	public void addActivity(String type, Date start, int courseId)
 	{
+		Activity activity = new Activity(start, courseId, type);
 		activities.add(activity);
+		timing = true;
 	}
-
+	
+	public void stopTiming(){
+		timing=false;
+	}
+	public boolean isTiming(){
+	   return timing;
+	}
+	public void setTiming(boolean timing){
+		this.timing= timing;
+	}
 	public boolean removeActivity(int activityId)
 	{
 		if(activities.size() == 0) return false;
@@ -139,11 +153,11 @@ public class User {
 		}
 		return false;
 	}
-	
+
 	public void addFavourite(String userNumber) {
 		favourites.add(userNumber);
 	}
-	
+
 	/**
 	 * Verwijdert bepaalde user uit favorieten
 	 * @param user : te verwijderen gebruiker uit favorieten
@@ -168,7 +182,7 @@ public class User {
 	{
 		milestones.add(milestone);
 	}
-	
+
 	public boolean removeMilestone(int milestoneId)
 	{
 		if(milestones.size() == 0) return false;
@@ -185,9 +199,9 @@ public class User {
 	}
 
 	public void setUsername(String username) {
-		
+
 		this.userName = username;
-		
+
 	}
 
 }

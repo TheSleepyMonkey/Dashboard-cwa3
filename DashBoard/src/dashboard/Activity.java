@@ -1,6 +1,6 @@
 package dashboard;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Id;
 
@@ -10,9 +10,6 @@ public class Activity {
 	
 		private Date start;
 		private Date stop;
-		
-		
-		
 		private int nrOfPages;
 		
 		private int courseId;
@@ -23,14 +20,14 @@ public class Activity {
 		
 		private String type;
 		
-		public Activity(Date start, Date stop, int nrOfPages, int courseId, int appreciation, String place, String type)
+		public Activity(Date start, int courseId, String type)
 		{
 			this.start = start;
-			this.stop = stop;
-			this.nrOfPages = nrOfPages;
+			this.stop = null;
+			this.nrOfPages = 0;
 			this.courseId = courseId;
-			this.appreciation = appreciation;
-			this.place = place;
+			this.appreciation = 0;
+			this.place = null;
 			this.type = type;
 		}
 		
@@ -38,11 +35,7 @@ public class Activity {
 		
 		//getters and setter
 		
-		public void setStart(Date start)
-		{
-			this.start = start;
-		}
-		
+	
 		public void setStop(Date stop)
 		{
 			this.stop = stop;
@@ -53,6 +46,12 @@ public class Activity {
 			return start.compareTo(stop);
 		}
 		
+		public Date getStart(){
+			return start;
+		}
+		public Date getStop(){
+			return stop;
+		}
 		public long getId()
 		{
 			return id;
@@ -91,10 +90,7 @@ public class Activity {
 			return place;
 		}
 		
-		public void setType(String type) {
-			this.type = type;
-		}
-		
+	
 		public String getType() {
 			return type;
 		}

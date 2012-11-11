@@ -37,13 +37,23 @@ public class CourseRegistry {
 		ofy.delete(course);
 	}
 	
-	public List<Course> getCourses() //Nog doen
+	public List<Course> getCourses() //TODO Nog doen
 	{
 		return courses;
 	}
 	
-	public Course getCourse(long id) // Nog doen
+	public Course getCourse(long id) //TODO Nog doen
 	{	
 		return ofy.query(Course.class).filter("id", id).get();	
+	}
+
+	public int getCourseId(String courseName) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Object getCourseName(int courseId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
